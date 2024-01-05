@@ -1,15 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EPUB to PDF Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>EPUB to PDF Converter</h1>
-    <form action="/convert" method="post" enctype="multipart/form-data">
-        <input type="file" name="epubFile" accept=".epub" required>
-        <button type="submit">Convert</button>
-    </form>
+    <div class="container">
+        <h1>EPUB to PDF Converter</h1>
+        <form action="/convert" method="post" enctype="multipart/form-data">
+            <label for="epubFile" class="file-label">
+                <span id="file-name">Choose an EPUB file</span>
+                <input type="file" name="epubFile" id="epubFile" accept=".epub" required onchange="displayFileName(this)">
+            </label>
+            <button type="submit" class="convert-btn">Convert</button>
+        </form>
+    </div>
+
+    <script>
+        function displayFileName(input) {
+            document.getElementById('file-name').innerText = input.files[0].name;
+        }
+    </script>
 </body>
 </html>
