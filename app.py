@@ -60,8 +60,6 @@ def convert():
 
         # Include styles in the content
         html_content = f'<style>{styles}</style>{html_content}'
-        print(html_content)
-
         # Save HTML content to a temporary file
         html_filename = secure_filename(title + ".html")
         html_path = os.path.join("temp", html_filename)
