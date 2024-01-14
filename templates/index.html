@@ -8,15 +8,21 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>EPUB to PDF Converter</h1>
-        <form action="/convert" method="post" enctype="multipart/form-data">
-            <label for="epubFile" class="file-label">
-                <span id="file-name">Choose an EPUB file</span>
-                <input type="file" name="epubFile" id="epubFile" accept=".epub" required onchange="displayFileName(this)">
-            </label>
-            <button type="submit" class="convert-btn">Convert and Download</button>
-        </form>
+
+    <header>
+        <h1>Con<span>ver</span>ter</h1>
+    </header>
+    <div class="body_container">
+            <div class="container">
+                <h1>EPUB to PDF Converter</h1>
+                <form action="/convert" method="post" enctype="multipart/form-data">
+                    <label for="epubFile" class="file-label">
+                        <span id="file-name">Choose an EPUB file</span>
+                        <input type="file" name="epubFile" id="epubFile" accept=".epub" required onchange="displayFileName(this)">
+                    </label>
+                    <button type="submit" class="convert-btn">Convert and Download</button>
+                </form>
+            </div>
     </div>
 
     <script>
